@@ -1,45 +1,46 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+      <header>
+        <h1>Conversor de Moedas</h1>
       </header>
+      <section>
+        <p>Selecione a moeda de origem e a moeda de destino para converter</p>
+        <div className="Inputs">
+          <select
+            name="original-currency"
+            id="original-currency"
+            className="Select-input"
+          >
+            <option value="">Selecione</option>
+          </select>
+
+          <select
+            name="converted-currency"
+            id="original-currency"
+            className="Select-input"
+          >
+            <option value="">Selecione</option>
+          </select>
+        </div>
+      </section>
+      <section>
+        <p>Valor a ser convertido</p>
+        <div className="Conversion">
+          <input
+            type="number"
+            name="value"
+            id="value"
+            className="Value-input"
+          />
+          <button className="Convert-button">Converter</button>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
