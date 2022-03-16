@@ -38,17 +38,16 @@ section {
   font-size: 18px;
 }
 
-.Convert-button {
-  width: 120px;
+.button {
+  width: 150px;
   height: 40px;
-  margin: 0px 10px 0px 15px;
-  border-radius: 5px;
   padding: 5px;
-  font-size: 18px;
-  background-color: rgb(238, 113, 68);
-  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
-.Convert-button:hover {
-  background-color: rgb(189, 91, 55);
+.button-text {
+  font-size: 18px;
+  font-weight: bold;
 }

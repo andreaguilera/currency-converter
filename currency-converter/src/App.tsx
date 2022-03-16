@@ -1,30 +1,18 @@
-import { useState } from "react";
-import "./App.css";
+import "./App.scss";
+import "antd/dist/antd.css";
+import { Header } from "./Components/Header";
+import { Select } from "./Components/Select";
+import { ConvertButton } from "./Components/Button";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <h1>Conversor de Moedas</h1>
-      </header>
+      <Header />
       <section>
         <p>Selecione a moeda de origem e a moeda de destino para converter</p>
         <div className="Inputs">
-          <select
-            name="original-currency"
-            id="original-currency"
-            className="Select-input"
-          >
-            <option value="">Selecione</option>
-          </select>
-
-          <select
-            name="converted-currency"
-            id="original-currency"
-            className="Select-input"
-          >
-            <option value="">Selecione</option>
-          </select>
+          <Select name="to" />
+          <Select name="from" />
         </div>
       </section>
       <section>
@@ -36,7 +24,7 @@ function App() {
             id="value"
             className="Value-input"
           />
-          <button className="Convert-button">Converter</button>
+          <ConvertButton />
         </div>
       </section>
     </div>
