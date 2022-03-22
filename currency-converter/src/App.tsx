@@ -1,8 +1,8 @@
 import "./App.scss";
 import "antd/dist/antd.css";
 import { Header } from "./Components/Header";
-import { Select } from "./Components/Select";
 import { ConvertButton } from "./Components/Button";
+import { Dropdown } from "./Components/Dropdown";
 
 function App() {
   return (
@@ -11,8 +11,9 @@ function App() {
       <section>
         <p>Selecione a moeda de origem e a moeda de destino para converter</p>
         <div className="Inputs">
-          <Select name="to" />
-          <Select name="from" />
+          <Dropdown />
+
+          <Dropdown />
         </div>
       </section>
       <section>
