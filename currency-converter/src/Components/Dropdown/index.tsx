@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./style.scss";
 import { Select } from "antd";
 

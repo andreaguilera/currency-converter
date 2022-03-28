@@ -2,6 +2,7 @@ import "./App.scss";
 import "antd/dist/antd.css";
 import { Header } from "./Components/Header";
 import { ConvertButton } from "./Components/Button";
+import { StyledInput } from "./Components/StyledInput";
 import { Dropdown } from "./Components/Dropdown";
 
 function App() {
@@ -12,19 +13,13 @@ function App() {
         <p>Selecione a moeda de origem e a moeda de destino para converter</p>
         <div className="Inputs">
           <Dropdown />
-
           <Dropdown />
         </div>
       </section>
       <section>
         <p>Valor a ser convertido</p>
         <div className="Conversion">
-          <input
-            type="number"
-            name="value"
-            id="value"
-            className="Value-input"
-          />
+          <StyledInput />
           <ConvertButton />
         </div>
       </section>
