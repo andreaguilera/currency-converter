@@ -4,8 +4,13 @@ import { Header } from "./Components/Header";
 import { ConvertButton } from "./Components/Button";
 import { StyledInput } from "./Components/StyledInput";
 import { Dropdown } from "./Components/Dropdown";
+import { useEffect, useState } from "react";
+import { useCurrencies } from "./contexts/currencies";
+import { getCurrencies } from "./services/api";
 
 function App() {
+  const { loadCurrencies } = useCurrencies();
+
   return (
     <div className="App">
       <Header />
@@ -20,7 +25,11 @@ function App() {
         <p>Valor a ser convertido</p>
         <div className="Conversion">
           <StyledInput />
-          <ConvertButton />
+          <ConvertButton
+            onClick={() => {
+              getCurrencies();
+            }}
+          />
         </div>
       </section>
     </div>
