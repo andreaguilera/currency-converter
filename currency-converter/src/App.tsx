@@ -4,11 +4,22 @@ import { Header } from "./Components/Header";
 import { ConvertButton } from "./Components/Button";
 import { StyledInput } from "./Components/StyledInput";
 import { Dropdown } from "./Components/Dropdown";
-import { useEffect, useState } from "react";
 import { useCurrencies } from "./contexts/currencies";
+import { currencies } from "./constants/currencies";
+
+import { Select } from "antd";
+const { Option } = Select;
 
 function App() {
-  const { convert } = useCurrencies();
+  const { convert, setFrom, setTo } = useCurrencies();
+
+  function handleSelectFrom(value: string) {
+    setFrom(value);
+  }
+
+  function handleSelectTo(value: string) {
+    setTo(value);
+  }
 
   return (
     <div className="App">
@@ -16,8 +27,29 @@ function App() {
       <section>
         <p>Selecione a moeda de origem e a moeda de destino para converter</p>
         <div className="Inputs">
-          <Dropdown />
-          <Dropdown />
+          <Select
+            defaultValue="Select"
+            style={{ width: 150 }}
+            onChange={handleSelectFrom}
+          >
+            {currencies.map((currency) => (
+              <Option key={currency} value={currency}>
+                {currency}
+              </Option>
+            ))}
+          </Select>
+
+          <Select
+            defaultValue="Select"
+            style={{ width: 150 }}
+            onChange={handleSelectTo}
+          >
+            {currencies.map((currency) => (
+              <Option key={currency} value={currency}>
+                {currency}
+              </Option>
+            ))}
+          </Select>
         </div>
       </section>
       <section>

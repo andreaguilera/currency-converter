@@ -1,7 +1,11 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
+import { getConversion } from "../services/api";
 
 interface CurrencyContextData {
-  convert(): any;
+  convert(from: string, to: string, amount: string): Promise<any>;
+  setFrom: any;
+  setTo: any;
+  setAmount: any;
 }
 
 const CurrenciesContext = createContext<CurrencyContextData>(
@@ -9,14 +13,23 @@ const CurrenciesContext = createContext<CurrencyContextData>(
 );
 
 export const CurrenciesProvider: React.FC = ({ children }) => {
+  const [from, setFrom] = useState<string>("");
+  const [to, setTo] = useState<string>("");
+  const [amount, setAmount] = useState<string>("");
+  const [result, setResult] = useState<string>("");
+
   const convert = async () => {
-    await console.log("convert");
+    const response = await getConversion(from, to, amount);
+    setResult(response);
   };
 
   return (
     <CurrenciesContext.Provider
       value={{
         convert,
+        setFrom,
+        setTo,
+        setAmount,
       }}
     >
       {children}
