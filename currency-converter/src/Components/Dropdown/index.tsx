@@ -11,7 +11,11 @@ function handleChange(value: string) {
 export const Dropdown = () => {
   const { currencies } = useCurrencies();
   return (
-    <Select defaultValue="EUR" style={{ width: 150 }} onChange={handleChange}>
+    <Select
+      defaultValue="Select"
+      style={{ width: 150 }}
+      onChange={handleChange}
+    >
       {currencies.map((currency) => (
         <Option key={currency} value={currency}>
           {currency}
