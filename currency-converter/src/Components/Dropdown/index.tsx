@@ -1,6 +1,6 @@
 import "./style.scss";
 import { Select } from "antd";
-import { useCurrencies } from "../../contexts/currencies";
+import { currencies } from "../../constants/currencies";
 
 const { Option } = Select;
 
@@ -9,7 +9,6 @@ function handleChange(value: string) {
 }
 
 export const Dropdown = () => {
-  const { currencies } = useCurrencies();
   return (
     <Select
       defaultValue="Select"

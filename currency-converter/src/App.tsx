@@ -8,11 +8,7 @@ import { useEffect, useState } from "react";
 import { useCurrencies } from "./contexts/currencies";
 
 function App() {
-  const { loadCurrencies, convert } = useCurrencies();
-
-  useEffect(() => {
-    loadCurrencies();
-  }, []);
+  const { convert } = useCurrencies();
 
   return (
     <div className="App">
