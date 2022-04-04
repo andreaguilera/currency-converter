@@ -6,10 +6,13 @@ import { StyledInput } from "./Components/StyledInput";
 import { Dropdown } from "./Components/Dropdown";
 import { useEffect, useState } from "react";
 import { useCurrencies } from "./contexts/currencies";
-import { getCurrencies } from "./services/api";
 
 function App() {
-  const { loadCurrencies } = useCurrencies();
+  const { loadCurrencies, convert } = useCurrencies();
+
+  useEffect(() => {
+    loadCurrencies();
+  }, []);
 
   return (
     <div className="App">
@@ -25,11 +28,7 @@ function App() {
         <p>Valor a ser convertido</p>
         <div className="Conversion">
           <StyledInput />
-          <ConvertButton
-            onClick={() => {
-              getCurrencies();
-            }}
-          />
+          <ConvertButton onClick={convert} />
         </div>
       </section>
     </div>

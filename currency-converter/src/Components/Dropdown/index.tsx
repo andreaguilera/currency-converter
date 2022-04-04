@@ -1,5 +1,6 @@
 import "./style.scss";
 import { Select } from "antd";
+import { useCurrencies } from "../../contexts/currencies";
 
 const { Option } = Select;
 
@@ -8,15 +9,14 @@ function handleChange(value: string) {
 }
 
 export const Dropdown = () => {
+  const { currencies } = useCurrencies();
   return (
     <Select defaultValue="EUR" style={{ width: 150 }} onChange={handleChange}>
-      <Option value="EUR">EUR</Option>
-      <Option value="USD">USD</Option>
-      <Option value="GBP">GBP</Option>
-      <Option value="JPY">JPY</Option>
-      <Option value="CAD">CAD</Option>
-      <Option value="AUD">AUD</Option>
-      <Option value="BRL">BRL</Option>
+      {currencies.map((currency) => (
+        <Option key={currency} value={currency}>
+          {currency}
+        </Option>
+      ))}
     </Select>
   );
 };
