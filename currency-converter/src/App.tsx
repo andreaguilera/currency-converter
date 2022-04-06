@@ -62,7 +62,14 @@ function App() {
         ) : (
           <div className="result">
             <p>
-              {amount} {from} é equivalente a {result} {to}
+              <strong>
+                {amount} {from}
+              </strong>{" "}
+              é equivalente a{" "}
+              <strong>
+                {result} {to}
+              </strong>{" "}
+              na cotação atual.
             </p>
           </div>
         )}
