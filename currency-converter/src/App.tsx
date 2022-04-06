@@ -3,7 +3,6 @@ import "antd/dist/antd.css";
 import { Header } from "./Components/Header";
 import { ConvertButton } from "./Components/Button";
 import { StyledInput } from "./Components/StyledInput";
-import { Dropdown } from "./Components/Dropdown";
 import { useCurrencies } from "./contexts/currencies";
 import { currencies } from "./constants/currencies";
 
@@ -11,7 +10,7 @@ import { Select } from "antd";
 const { Option } = Select;
 
 function App() {
-  const { convert, setFrom, setTo } = useCurrencies();
+  const { convert, setFrom, setTo, result, amount, from, to } = useCurrencies();
 
   function handleSelectFrom(value: string) {
     setFrom(value);
@@ -58,6 +57,15 @@ function App() {
           <StyledInput />
           <ConvertButton onClick={convert} />
         </div>
+        {result !== null ? (
+          <div className="result">
+            <p>
+              {amount} {from} é equivalente a {result} {to}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
       </section>
     </div>
   );

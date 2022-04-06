@@ -6,6 +6,10 @@ interface CurrencyContextData {
   setFrom: any;
   setTo: any;
   setAmount: any;
+  result: any;
+  amount: string;
+  from: string;
+  to: string;
 }
 
 const CurrenciesContext = createContext<CurrencyContextData>(
@@ -16,7 +20,7 @@ export const CurrenciesProvider: React.FC = ({ children }) => {
   const [from, setFrom] = useState<string>("");
   const [to, setTo] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
-  const [result, setResult] = useState<string>("");
+  const [result, setResult] = useState(null);
 
   const convert = async () => {
     const response = await getConversion(from, to, amount);
@@ -30,6 +34,10 @@ export const CurrenciesProvider: React.FC = ({ children }) => {
         setFrom,
         setTo,
         setAmount,
+        result,
+        amount,
+        from,
+        to,
       }}
     >
       {children}
