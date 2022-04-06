@@ -20,11 +20,15 @@ export const CurrenciesProvider: React.FC = ({ children }) => {
   const [from, setFrom] = useState<string>("");
   const [to, setTo] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState("");
 
   const convert = async () => {
+    if (from === "" || to === "" || amount === "") {
+      alert("Preencha todos os campos");
+      return;
+    }
     const response = await getConversion(from, to, amount);
-    setResult(response);
+    setResult(response.toFixed(3));
   };
 
   return (

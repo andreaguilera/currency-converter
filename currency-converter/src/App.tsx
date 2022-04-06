@@ -57,14 +57,14 @@ function App() {
           <StyledInput />
           <ConvertButton onClick={convert} />
         </div>
-        {result !== null ? (
+        {result === "" || amount === "" ? (
+          ""
+        ) : (
           <div className="result">
             <p>
               {amount} {from} é equivalente a {result} {to}
             </p>
           </div>
-        ) : (
-          ""
         )}
       </section>
     </div>
