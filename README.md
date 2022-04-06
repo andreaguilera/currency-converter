@@ -16,4 +16,13 @@ Feito utilizando as tecnologias:
 </div>
 
   ![WhatsApp Image 2022-04-06 at 10 13 59](https://user-images.githubusercontent.com/28695864/161983870-efcd36b5-1f45-407a-b379-72a1d68db83b.jpeg)
+  
+  
+  Para executar este projeto:
+  
+  - Git clone
+  - cd currency-converter
+  - yarn install
+  - yarn dev
+  - Abra o navegador no endereço: localhost:3000
 
