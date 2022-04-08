@@ -6,6 +6,8 @@ Um simples conversor de moedas baseado na cotação atual.
 
 API utilizada: https://www.exchangerate-api.com
 
+Dê uma olhada: https://currency-converter55.netlify.app
+
 Feito utilizando as tecnologias:
 
 <div style="display:inline_block">
