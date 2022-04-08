@@ -12,7 +12,8 @@ import { Select } from "antd";
 const { Option } = Select;
 
 function App() {
-  const { convert, setFrom, setTo, result, amount, from, to } = useCurrencies();
+  const { convert, setFrom, setTo, result, amount, from, to, lastUpdate } =
+    useCurrencies();
 
   function handleSelectFrom(value: string) {
     setFrom(value);
@@ -81,6 +82,7 @@ function App() {
               </strong>{" "}
               na cotação atual.
             </p>
+            <p>Última atualização: {lastUpdate}</p>
           </div>
         )}
       </section>

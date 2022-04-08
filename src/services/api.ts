@@ -8,5 +8,5 @@ export const getConversion = async (
 ): Promise<any> => {
   const response = await fetch(`${BASE_URL}pair/${from}/${to}/${amount}`);
   const data = await response.json();
-  return data.conversion_result;
+  return data;
 };
