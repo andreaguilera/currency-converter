@@ -5,6 +5,8 @@ import { ConvertButton } from "./Components/Button";
 import { StyledInput } from "./Components/StyledInput";
 import { useCurrencies } from "./contexts/currencies";
 import { currencies } from "./constants/currencies";
+import { Button } from "antd";
+import { SwapOutlined } from "@ant-design/icons";
 
 import { Select } from "antd";
 const { Option } = Select;
@@ -20,6 +22,11 @@ function App() {
     setTo(value);
   }
 
+  function handleSwitchCurrencies() {
+    setFrom(to);
+    setTo(from);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -29,6 +36,7 @@ function App() {
           <Select
             defaultValue="Select"
             style={{ width: 150 }}
+            value={from}
             onChange={handleSelectFrom}
           >
             {currencies.map((currency) => (
@@ -38,7 +46,15 @@ function App() {
             ))}
           </Select>
 
+          <Button
+            type="primary"
+            shape="default"
+            icon={<SwapOutlined />}
+            onClick={handleSwitchCurrencies}
+          />
+
           <Select
+            value={to}
             defaultValue="Select"
             style={{ width: 150 }}
             onChange={handleSelectTo}
