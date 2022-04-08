@@ -30,7 +30,7 @@ export const CurrenciesProvider: React.FC = ({ children }) => {
       return;
     }
     const response = await getConversion(from, to, amount);
-    setResult(response.conversion_result.toFixed(3));
+    setResult(response.conversion_result);
     setLastUpdate(response.time_last_update_utc.substring(5, 16));
   };
 
