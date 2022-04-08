@@ -17,8 +17,8 @@ const CurrenciesContext = createContext<CurrencyContextData>(
 );
 
 export const CurrenciesProvider: React.FC = ({ children }) => {
-  const [from, setFrom] = useState<string>("");
-  const [to, setTo] = useState<string>("");
+  const [from, setFrom] = useState<string>("Select");
+  const [to, setTo] = useState<string>("Select");
   const [amount, setAmount] = useState<string>("");
   const [result, setResult] = useState("");
 

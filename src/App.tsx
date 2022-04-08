@@ -34,7 +34,6 @@ function App() {
         <p>Selecione a moeda de origem e a moeda de destino para converter</p>
         <div className="Inputs">
           <Select
-            defaultValue="Select"
             style={{ width: 150 }}
             value={from}
             onChange={handleSelectFrom}
@@ -53,12 +52,7 @@ function App() {
             onClick={handleSwitchCurrencies}
           />
 
-          <Select
-            value={to}
-            defaultValue="Select"
-            style={{ width: 150 }}
-            onChange={handleSelectTo}
-          >
+          <Select value={to} style={{ width: 150 }} onChange={handleSelectTo}>
             {currencies.map((currency) => (
               <Option key={currency} value={currency}>
                 {currency}
