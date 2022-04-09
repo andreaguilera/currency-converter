@@ -19,7 +19,7 @@ export const StyledInput: React.FC = () => {
       className="input"
       value={amount}
       size="large"
-      accept="number"
+      type={"number"}
       placeholder="Digite um valor"
       onChange={(e) => handleChange(e.target.value)}
     />
