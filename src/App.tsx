@@ -11,17 +11,8 @@ import { Select } from "antd";
 const { Option } = Select;
 
 function App() {
-  const {
-    convert,
-    setFrom,
-    setTo,
-    setAmount,
-    result,
-    amount,
-    from,
-    to,
-    lastUpdate,
-  } = useCurrencies();
+  const { setFrom, setTo, setAmount, result, amount, from, to, lastUpdate } =
+    useCurrencies();
 
   function handleSelectFrom(value: string) {
     setFrom(value);
