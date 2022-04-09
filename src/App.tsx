@@ -1,7 +1,6 @@
 import "./App.scss";
 import "antd/dist/antd.css";
 import { Header } from "./Components/Header";
-import { ConvertButton } from "./Components/Button";
 import { StyledInput } from "./Components/StyledInput";
 import { useCurrencies } from "./contexts/currencies";
 import { currencies } from "./constants/currencies";
@@ -12,20 +11,32 @@ import { Select } from "antd";
 const { Option } = Select;
 
 function App() {
-  const { convert, setFrom, setTo, result, amount, from, to, lastUpdate } =
-    useCurrencies();
+  const {
+    convert,
+    setFrom,
+    setTo,
+    setAmount,
+    result,
+    amount,
+    from,
+    to,
+    lastUpdate,
+  } = useCurrencies();
 
   function handleSelectFrom(value: string) {
     setFrom(value);
+    setAmount("");
   }
 
   function handleSelectTo(value: string) {
     setTo(value);
+    setAmount("");
   }
 
   function handleSwitchCurrencies() {
     setFrom(to);
     setTo(from);
+    setAmount("");
   }
 
   return (
@@ -66,7 +77,6 @@ function App() {
         <p>Valor a ser convertido</p>
         <div className="Conversion">
           <StyledInput />
-          <ConvertButton onClick={convert} />
         </div>
         {result === "" || amount === "" ? (
           ""

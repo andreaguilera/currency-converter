@@ -25,7 +25,7 @@ export const CurrenciesProvider: React.FC = ({ children }) => {
   const [lastUpdate, setLastUpdate] = useState<string>("");
 
   const convert = async () => {
-    if (from === "" || to === "" || amount === "") {
+    if (from === "" || to === "") {
       alert("Preencha todos os campos");
       return;
     }
